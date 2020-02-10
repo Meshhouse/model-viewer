@@ -1,0 +1,197 @@
+$green: #00b16a
+$white: #fff
+$black: #000
+
+$themeFont: var(--theme-font, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif)
+$themeColor: var(--theme-color, $green)
+$themeColorActive: var(--theme-color-active, darken($green, 10%))
+$themeBackground: var(--viewer-background, #333333)
+$themeBackgroundError: var(--viewer-background-error, #96281b)
+
+*
+  box-sizing: border-box
+  font-family: $themeFont
+\:host
+  display: block
+
+.model-viewer
+  &__container
+    display: flex
+    flex-direction: column
+    width: 100%
+    height: 100%
+    position: relative
+  &__controls
+    display: flex
+    align-items: center
+    justify-content: space-between
+    position: absolute
+    width: 100%
+    padding: 2rem 1rem 1rem
+    background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.5))
+    color: $white
+    bottom: 0
+    left: 0
+    transition: opacity 0.3s ease
+    .logo
+      margin-right: 1rem
+      img, svg
+        max-height: 48px
+    .stats
+      display: flex
+      flex-direction: column
+      margin-left: auto
+      dd
+        text-align: right
+    .button
+      position: relative
+      appearance: none
+      cursor: pointer
+      background: none
+      border: none
+      padding: 0
+      color: $white
+      img, svg
+        display: block
+        width: 2.5rem
+        height: 2.5rem
+        object-fit: contain
+      svg
+        path
+          transition: fill 0.3s ease
+          fill: $white
+      &:hover
+        svg
+          path
+            fill: $themeColor
+      &.active
+        .button
+          &__badge
+            opacity: 1
+      &__badge
+        pointer-events: none
+        position: absolute
+        font-size: 0.5rem
+        text-transform: uppercase
+        bottom: -0.75rem
+        right: 0
+        width: 100%
+        height: 0.5rem
+        line-height: 1
+        letter-spacing: 1px
+        background-color: $themeColor
+        opacity: 0
+        transition: opacity 0.3s ease
+      &-group
+        margin-left: 1rem
+        display: flex
+        .dropdown
+          .button
+            height: 100%
+        .button
+          margin-right: 1rem
+          &:last-child
+            margin-right: 0
+    .dropdown
+      position: relative
+      display: inline-block
+      &__menu
+        display: none
+        position: absolute
+        bottom: 64px
+        right: 0
+        min-width: 200px
+        background-color: $white
+        z-index: 1
+        &:after
+          content: ''
+          position: absolute
+          bottom: -10px
+          right: 24px
+          width: 0
+          height: 0
+          border-style: solid
+          border-width: 10px 10px 0 10px
+          border-color: $white transparent transparent transparent
+        &.show
+          display: block
+        &-item
+          display: block
+          padding: 0.5rem 1rem
+          cursor: pointer
+          color: $black
+          &.active, &:hover
+            color: $white
+          &.active
+            background-color: $themeColor
+          &:hover
+            background-color: $themeColorActive
+  &__info
+    display: flex
+    width: 100%
+    flex-direction: column
+    position: absolute
+    padding: 1rem 1rem 2rem
+    top: 0
+    left: 0
+    color: #ffffff
+    background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0))
+    transition: opacity 0.3s ease
+    b
+      font-size: 1.5rem
+    p
+      display: flex
+      align-items: center
+      margin: 0
+      a
+        display: block
+        text-align: center
+        background-color: $themeColor
+        color: $white
+        text-decoration: none
+        margin-left: 0.5rem
+        padding: 0.125rem 1rem
+        &:hover
+          background-color: $themeColorActive
+  &__loader, &__error
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    width: 100%
+    height: 100%
+    color: $white
+    position: absolute
+    top: 0
+    left: 0
+  &__loader
+    display: flex
+    background: $themeBackground
+    z-index: 2
+    transition: opacity 1s 1s ease
+    &-bar
+      position: absolute
+      bottom: 0
+      left: 0
+      width: 100%
+      overflow: hidden
+      background-color: #bbbbbb
+    &-progress
+      display: block
+      background: $themeColor
+      color: white
+      width: 0%
+      height: 1rem
+      transition: width 0.3s ease
+    &.loaded
+      opacity: 0
+      pointer-events: none
+  &__error
+    display: none
+    background: $themeBackgroundError
+    z-index: 3
+    &.visible
+      display: flex
+
+.faded
+  pointer-events: none
+  opacity: 0
