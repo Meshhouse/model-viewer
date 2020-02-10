@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width,initial-scale=1'>
+  <title>Svelte model viewer</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script defer src="./js/bundle.js"></script>
+  <style>
+    model-viewer:not(:defined) {
+      opacity: 0;
+    }
+    model-viewer.themed {
+      --theme-color: #a84ecc;
+      --theme-color-active: #741e96;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h1>Svelte model viewer</h1>
+        <p>glTF model viewer, insriped by Marmoset viewer.</p>
+        <hr>
+        <h2>Demo</h2>
+      </div>
+      <div class="col-lg-6">
+        <h3>Default</h3>
+        <model-viewer
+          model="./assets/BoomBox.glb"
+          style="height: 600px;"
+        >
+        </model-viewer>
+      </div>
+      <div class="col-lg-6">
+        <h3>Missing model</h3>
+        <model-viewer
+          style="height: 600px;"
+        >
+        </model-viewer>
+      </div>
+      <div class="col-lg-6">
+        <h3>Include external HDRI</h3>
+        <model-viewer
+          model="./assets/BoomBox.glb"
+          hdri="./assets/colorful_studio_1k.hdr"
+          style="height: 600px;"
+        >
+          <span slot="logo">Model viewer 1.0.0</span>
+        </model-viewer>
+      </div>
+      <div class="col-lg-6">
+        <h3>Include model title. author and link</h3>
+        <model-viewer
+          model="./assets/BoomBox.glb"
+          hdri="./assets/colorful_studio_1k.hdr"
+          modeltitle="Boom box"
+          author="Khronos Group"
+          authorlink="https://khronos.org"
+          style="height: 600px;"
+        >
+          <span slot="logo">Model viewer 1.0.0</span>
+        </model-viewer>
+      </div>
+      <div class="col-lg-6">
+        <h3>Auto-hide controls</h3>
+        <model-viewer
+          model="./assets/BoomBox.glb"
+          hdri="./assets/colorful_studio_1k.hdr"
+          modeltitle="Boom box"
+          author="Khronos Group"
+          authorlink="https://khronos.org"
+          style="height: 600px;"
+          autohide="true"
+        >
+          <span slot="logo">Model viewer 1.0.0</span>
+        </model-viewer>
+      </div>
+      <div class="col-lg-6">
+        <h3>Custom theme</h3>
+        <model-viewer
+          model="./assets/BoomBox.glb"
+          hdri="./assets/colorful_studio_1k.hdr"
+          modeltitle="Boom box"
+          author="Khronos Group"
+          authorlink="https://khronos.org"
+          class="themed"
+          style="height: 600px;"
+        >
+          <span slot="logo">Model viewer 1.0.0</span>
+        </model-viewer>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

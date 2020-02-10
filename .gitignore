@@ -1,5 +1,6 @@
 /node_modules/
 /public/test/
 /public/index.html
+/docs/
 
 .DS_Store
