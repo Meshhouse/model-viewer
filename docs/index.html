@@ -27,71 +27,22 @@
         <hr>
         <h2>Demo</h2>
       </div>
-      <div class="col-lg-6">
-        <h3>Default</h3>
+      <div class="col-12">
         <model-viewer
-          model="./assets/BoomBox.glb"
+          model="/assets/BoomBox.glb"
           style="height: 600px;"
         >
         </model-viewer>
       </div>
-      <div class="col-lg-6">
-        <h3>Missing model</h3>
-        <model-viewer
-          style="height: 600px;"
-        >
-        </model-viewer>
-      </div>
-      <div class="col-lg-6">
-        <h3>Include external HDRI</h3>
-        <model-viewer
-          model="./assets/BoomBox.glb"
-          hdri="./assets/colorful_studio_1k.hdr"
-          style="height: 600px;"
-        >
-          <span slot="logo">Model viewer 1.0.0</span>
-        </model-viewer>
-      </div>
-      <div class="col-lg-6">
-        <h3>Include model title. author and link</h3>
-        <model-viewer
-          model="./assets/BoomBox.glb"
-          hdri="./assets/colorful_studio_1k.hdr"
-          modeltitle="Boom box"
-          author="Khronos Group"
-          authorlink="https://khronos.org"
-          style="height: 600px;"
-        >
-          <span slot="logo">Model viewer 1.0.0</span>
-        </model-viewer>
-      </div>
-      <div class="col-lg-6">
-        <h3>Auto-hide controls</h3>
-        <model-viewer
-          model="./assets/BoomBox.glb"
-          hdri="./assets/colorful_studio_1k.hdr"
-          modeltitle="Boom box"
-          author="Khronos Group"
-          authorlink="https://khronos.org"
-          style="height: 600px;"
-          autohide="true"
-        >
-          <span slot="logo">Model viewer 1.0.0</span>
-        </model-viewer>
-      </div>
-      <div class="col-lg-6">
-        <h3>Custom theme</h3>
-        <model-viewer
-          model="./assets/BoomBox.glb"
-          hdri="./assets/colorful_studio_1k.hdr"
-          modeltitle="Boom box"
-          author="Khronos Group"
-          authorlink="https://khronos.org"
-          class="themed"
-          style="height: 600px;"
-        >
-          <span slot="logo">Model viewer 1.0.0</span>
-        </model-viewer>
+      <div class="col-12">
+        <ul>
+          <li><a href="./examples/default.html" class="h3">Default</a></li>
+          <li><a href="./examples/error.html" class="h3">Missing model</a></li>
+          <li><a href="./examples/hdri.html" class="h3">Include external HDRI</a></li>
+          <li><a href="./examples/info.html" class="h3">Include model title. author and link</a></li>
+          <li><a href="./examples/autohide.html" class="h3">Auto-hide controls</a></li>
+          <li><a href="./examples/custom-theme.html" class="h3">Custom theme</a></li>
+        </ul>
       </div>
     </div>
   </div>

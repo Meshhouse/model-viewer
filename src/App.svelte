@@ -483,10 +483,10 @@ function viewerResizeObserver() {
 }
 
 function dropdownAutoClose(event: any) {
-  const isClickedOutside = !event.path.some((e: HTMLElement) => {
-    return e.className === 'dropdown__menu show'
-      || e.className === 'dropdown'
-  })
+  let isClickedOutside = false
+  if (typeof event.target.className === 'string') {
+    isClickedOutside = !event.target.className.includes('dropdown__menu-item')
+  }
   if (isClickedOutside === true) {
     dropdownToggle = false
   }
