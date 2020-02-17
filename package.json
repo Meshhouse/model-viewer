@@ -1,7 +1,8 @@
 {
-  "name": "svelte-model-viewer",
+  "name": "@meshhouse/model-viewer",
   "version": "1.0.0",
   "main": "public/build/bundle.js",
+  "types": "types/bundle.d.ts",
   "license": "MIT",
   "scripts": {
     "build": "rollup -c",
@@ -12,6 +13,7 @@
   "devDependencies": {
     "@rollup/plugin-commonjs": "^11.0.0",
     "@rollup/plugin-node-resolve": "^7.0.0",
+    "@types/react": "^16.9.19",
     "autoprefixer": "^9.7.4",
     "node-sass": "^4.13.1",
     "postcss": "^7.0.26",

@@ -4,7 +4,7 @@ This is a model viewer web component made with Svelte, Typescript and Three.js
 
 ## Install
 ```bash
-npm install --save Meshhouse-UI-Kit/model-viewer#master
+npm install --save @meshhouse/model-viewer
 ```
 
 ## Usage
@@ -31,6 +31,13 @@ Currently loads only GLTF files (as more web-oriented format):
 </body>
 </html>
 ```
+
+## Usage in frameworks
+[In React](https://codesandbox.io/s/meshhouse-model-viewer-react-61d57)
+
+[In Vue.js](https://codesandbox.io/s/meshhouse-model-viewer-vue-wfnuv)
+
+[In Angular](https://codesandbox.io/s/meshhouse-model-viewer-angular-zqifg)
 
 ## Attributes
 **model** - URL to GLTF model, *required*
