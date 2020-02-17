@@ -1,8 +1,24 @@
 {
-  "name": "svelte-model-viewer",
+  "name": "@meshhouse/model-viewer",
   "version": "1.0.0",
   "main": "public/build/bundle.js",
+  "types": "types/bundle.d.ts",
   "license": "MIT",
+  "contributors": [
+    "Maxim Makarov <aks11311@gmail.com>"
+  ],
+  "keywords": [
+    "webgl",
+    "threejs",
+    "web component",
+    "model viewer"
+  ],
+  "homepage": "https://github.com/Meshhouse-UI-Kit/model-viewer",
+  "bugs": "https://github.com/Meshhouse-UI-Kit/model-viewer/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Meshhouse-UI-Kit/model-viewer.git"
+  },
   "scripts": {
     "build": "rollup -c",
     "dev": "rollup -c -w",
@@ -12,6 +28,7 @@
   "devDependencies": {
     "@rollup/plugin-commonjs": "^11.0.0",
     "@rollup/plugin-node-resolve": "^7.0.0",
+    "@types/react": "^16.9.19",
     "autoprefixer": "^9.7.4",
     "node-sass": "^4.13.1",
     "postcss": "^7.0.26",
