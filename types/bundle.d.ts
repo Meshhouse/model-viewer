@@ -16,5 +16,6 @@ export interface ModelViewerProps extends React.HTMLAttributes<HTMLElement> {
   resizable?: boolean,
   autohide?: boolean,
   skycolor?: string,
-  groundcolor?: string
+  groundcolor?: string,
+  thumbnail?: string
 }

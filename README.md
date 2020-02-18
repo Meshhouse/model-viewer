@@ -58,6 +58,8 @@ Currently loads only GLTF files (as more web-oriented format):
 
 **groundcolor** - scene ground color, default is #597a9c
 
+**thumbnail** - loader background image
+
 ## Slots
 **loader** - *Loading* text
 

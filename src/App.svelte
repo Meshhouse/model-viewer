@@ -85,14 +85,25 @@
     class="model-viewer__loader"
     class:loaded="{modelLoadStatus === true}"
   >
-    <slot name="loader">
-      <h2>Loading</h2>
-    </slot>
-    <div class="model-viewer__loader-bar">
-      <span
-        class="model-viewer__loader-progress"
-        style="width: {loadStatus}"
-      />
+    {#if thumbnail !== ''}
+      <img
+        src={thumbnail}
+        alt={modeltitle}
+        class="model-viewer__loader-thumbnail"
+      >
+    {/if}
+    <div class="model-viewer__loader-info">
+      <div class="model-viewer__loader-slot">
+        <slot name="loader">
+          <h2>Loading</h2>
+        </slot>
+      </div>
+      <div class="model-viewer__loader-bar">
+        <span
+          class="model-viewer__loader-progress"
+          style="width: {loadStatus}"
+        />
+      </div>
     </div>
   </div>
   <div
@@ -146,6 +157,7 @@ export let hdri = ''
 export let modeltitle = ''
 export let author = ''
 export let authorlink = ''
+export let thumbnail = ''
 export let resizable = true
 export let autohide = false
 export let skycolor = '#dbeeff'
